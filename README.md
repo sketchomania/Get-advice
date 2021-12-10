@@ -1,4 +1,4 @@
-![](/images/get-advice.png)
+![](/src/images/get-advice.png)
 
 ## Features
 
