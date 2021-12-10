@@ -26,6 +26,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="card">
+        <h3>Advice of the day</h3>
         <h1 className="advice">&quot;{advice}&quot;</h1>
         <button className="button" onClick={fetchAdvice}>
           <span>Get More Advice!</span>

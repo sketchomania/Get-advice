@@ -8,7 +8,7 @@ body {
 }
 
 .app {
-  height: 100%;
+  height: 100vh;
   background: linear-gradient(rgb(0, 0, 0, 0.3), rgb(0, 0, 0, 0.3)),
     url(./images/nature-2.jpg);
   background-size: cover;
@@ -21,10 +21,11 @@ body {
 
 .card {
   background-color: whitesmoke;
-  height: 30%;
-  width: 40%;
+  max-height: 60vh;
+  max-width: 100%;
+  width: 40rem;
   border-radius: 1.5rem;
-  padding: 2%;
+  padding: 3rem 1rem;
   box-shadow: 0px 0px 36px 12px rgba(0, 0, 0, 0.7);
   -webkit-box-shadow: 0px 0px 36px 12px rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 0px 0px 36px 12px rgba(0, 0, 0, 0.7);
@@ -32,13 +33,21 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
+}
+
+h3 {
+  margin: 0;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  font-family: "Rubik", sans-serif;
 }
 
 .advice {
   display: flex;
   color: #07c5f0;
-  /* text-shadow: 2px 2px 4px #000000; */
-  height: 580px;
+  margin: 3rem auto;
+  max-width: 35rem;
   font-family: "Rubik", sans-serif;
 }
 
@@ -47,12 +56,13 @@ body {
   outline: none;
   text-decoration: none;
   border-radius: 50px;
+  padding: 10px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   text-transform: uppercase;
-  height: 200px;
+  /* height: 200px; */
   width: 210px;
   opacity: 1;
   background-color: #ffffff;
@@ -113,7 +123,7 @@ body {
 
 @media only screen and (max-width: 600px) {
   .card {
-    width: 80%;
-    height: 50%;
+    max-width: 80%;
+    max-height: 50vh;
   }
 }
