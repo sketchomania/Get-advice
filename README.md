@@ -1,3 +1,5 @@
+![](/images/get-advice.png)
+
 ## Features
 
 **📖 Get a piece of advice**
