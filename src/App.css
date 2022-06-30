@@ -35,6 +35,12 @@ body {
   flex-direction: column;
   text-align: center;
 }
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 13px 40px -5px hsla(240, 30.1%, 28%, 0.12),
+    0 8px 32px -8px hsla(0, 0%, 0%, 0.14),
+    0 -6px 32px -6px hsla(0, 0%, 0%, 0.02);
+}
 
 h3 {
   margin: 0;
@@ -52,78 +58,86 @@ h3 {
 }
 
 .button {
-  position: relative;
+  font-size: 15px;
+  height: auto;
+  padding: 0.6em 2em;
+  border: none;
   outline: none;
-  text-decoration: none;
-  border-radius: 50px;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: rgb(255, 255, 255);
+  background: #111;
   cursor: pointer;
-  text-transform: uppercase;
-  /* height: 200px; */
-  width: 210px;
-  opacity: 1;
-  background-color: #ffffff;
-  border: 2px solid rgba(52, 235, 27, 0.7);
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-.button span {
-  color: #8515e1;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.7px;
+.button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
 }
-
 .button:hover {
-  animation: rotate 0.7s ease-in-out both;
+  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
+    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
+    rgba(44, 187, 99, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
 }
 
-.button:hover span {
-  animation: storm 0.7s ease-in-out both;
-  animation-delay: 0.06s;
-}
-
-@keyframes rotate {
+@keyframes glowing-button-85 {
   0% {
-    transform: rotate(0deg) translate3d(0, 0, 0);
-  }
-  25% {
-    transform: rotate(3deg) translate3d(0, 0, 0);
+    background-position: 0 0;
   }
   50% {
-    transform: rotate(-3deg) translate3d(0, 0, 0);
-  }
-  75% {
-    transform: rotate(1deg) translate3d(0, 0, 0);
+    background-position: 400% 0;
   }
   100% {
-    transform: rotate(0deg) translate3d(0, 0, 0);
+    background-position: 0 0;
   }
 }
 
-@keyframes storm {
-  0% {
-    transform: translate3d(0, 0, 0) translateZ(0);
-  }
-  25% {
-    transform: translate3d(4px, 0, 0) translateZ(0);
-  }
-  50% {
-    transform: translate3d(-3px, 0, 0) translateZ(0);
-  }
-  75% {
-    transform: translate3d(2px, 0, 0) translateZ(0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0) translateZ(0);
-  }
+.button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
+
 
 @media only screen and (max-width: 600px) {
   .card {
     max-width: 80%;
     max-height: 50vh;
+    padding: 20px;
   }
 }
